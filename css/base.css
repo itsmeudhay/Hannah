@@ -1,0 +1,411 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+
+
+:root {
+    /* Colors */
+    --color-bg-main: #000000; /* Kept but not directly used for body background */
+    --color-bg-gradient: linear-gradient(135deg, #f5f5f5 0%, #a7c5bd 50%, #4e9f3d 100%); /* Light Gray -> Teal/Mint -> Dark Green */
+    --color-navbar-bg: #4e9f3d; /* Dark Green */
+    --color-navbar-border: rgba(238, 238, 238, 0.3); /* Light border */
+    --color-primary: #a7c5bd; /* Teal/Mint */
+    --color-secondary: #4e9f3d; /* Dark Green */
+    --color-highlight: #ffb347; /* Orange/Amber */
+    --color-highlight-light: #ffd59e; /* Light Orange/Peach */
+    --color-card-bg: rgba(255, 255, 255, 0.95); /* Almost opaque white for cards */
+    --color-card-border: rgba(0, 0, 0, 0.1); /* Subtle black border */
+    --color-card-border-hover: rgba(78, 159, 61, 0.5); /* Vibrant green on hover (from secondary) */
+    --color-card-shadow: rgba(0, 0, 0, 0.2); /* Dark shadow for depth */
+    --color-overlay-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); /* Dark overlay for hero text */
+    --color-footer-bg: #333333; /* Dark gray footer */
+    --color-footer-border: rgba(255, 255, 255, 0.1); /* Light border for footer */
+    --color-footer-link: #cccccc; /* Light gray footer links */
+    --color-footer-link-hover: #ffb347; /* Orange hover for footer links */
+    --color-text-main: #333333; /* Dark gray for main text (on light backgrounds) */
+    --color-text-secondary: #808080; /* Medium gray for secondary text */
+    --color-text-accent: #ffb347; /* Orange accent text */
+
+    --color-btn-primary: linear-gradient(135deg, var(--color-highlight), var(--color-highlight-light)); /* Orange gradient button */
+    --color-btn-primary-bg: var(--color-highlight);
+    --color-btn-primary-bg-hover: var(--color-highlight-light);
+    --color-btn-primary-text: #2c3e50; /* Dark text on primary button */
+
+    --color-btn-secondary-bg: transparent;
+    --color-btn-secondary-border: var(--color-secondary); /* Dark green border */
+    --color-btn-secondary-text: var(--color-secondary); /* Dark green text */
+    --color-btn-secondary-hover-bg: var(--color-secondary); /* Dark green hover background */
+    --color-btn-secondary-hover-text: #ffffff; /* White text on hover */
+
+    --color-feature-icon-bg: linear-gradient(135deg, var(--color-primary), var(--color-highlight)); /* Teal to Orange gradient for icons */
+    --color-feature-card-bg: rgba(255, 255, 255, 0.95);
+    --color-feature-card-border: rgba(0, 0, 0, 0.1);
+    --color-feature-card-border-hover: rgba(78, 159, 61, 0.5); /* Green hover */
+    --color-feature-card-shadow: rgba(0, 0, 0, 0.2);
+    --color-feature-card-before: linear-gradient(135deg, rgba(78, 159, 61, 0.1), rgba(78, 159, 61, 0.1)); /* Green shine effect */
+
+    --color-testimonial-card-bg: rgba(255, 255, 255, 0.95);
+    --color-testimonial-card-border: rgba(0, 0, 0, 0.1);
+    --color-testimonial-card-border-hover: rgba(78, 159, 61, 0.5); /* Green hover */
+    --color-testimonial-card-shadow: rgba(0, 0, 0, 0.2);
+    --color-testimonial-quote: rgba(78, 159, 61, 0.3); /* Green quote mark */
+    --color-author-border: rgba(78, 159, 61, 0.3); /* Green author border */
+
+    --color-cta-bg: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); /* Teal to Dark Green CTA background */
+    --color-cta-btn-primary-bg: var(--color-highlight);
+    --color-cta-btn-primary-bg-hover: var(--color-highlight-light);
+    --color-cta-btn-primary-text: #2c3e50;
+    --color-cta-btn-secondary-bg: transparent;
+    --color-cta-btn-secondary-border: #ffffff; /* White border for CTA secondary btn */
+    --color-cta-btn-secondary-text: #ffffff; /* White text for CTA secondary btn */
+    --color-cta-btn-secondary-hover-bg: #ffffff;
+    --color-cta-btn-secondary-hover-text: var(--color-secondary); /* Dark green text on hover */
+
+    /* Font Families */
+    --font-main: 'Poppins', sans-serif;
+    --font-title: 'Playfair Display', serif;
+
+    /* Font Sizes */
+    --font-size-main-title: 4rem;
+    --font-size-main-title-md: 2.5rem;
+    --font-size-main-title-sm: 2rem;
+    --font-size-section-header: 3rem;
+    --font-size-section-header-sm: 2rem;
+    --font-size-card-title: 1.5rem;
+    --font-size-testimonial: 1.1rem;
+    --font-size-btn: 1rem;
+    --font-size-btn-sm: 0.9rem;
+    --font-size-cta-title: 3rem;
+    --font-size-cta-title-sm: 2rem;
+    --font-size-cta-text: 1.2rem;
+    --font-size-nav-logo: 1.5rem;
+    --font-size-author: 0.9rem;
+
+    /* Spacing */
+    --spacing-container: 0 2rem;
+    --spacing-container-sm: 0 1rem;
+    --spacing-section: 6rem 0;
+    --spacing-card: 2rem;
+    --spacing-card-lg: 2.5rem;
+    --spacing-btn: 1rem 2rem;
+    --spacing-btn-sm: 0.8rem 1.5rem;
+    --spacing-card-cta: 0.8rem 1.5rem;
+    --spacing-footer: 3rem 0 1rem;
+    --spacing-footer-bottom: 2rem;
+
+    /* Border Radius */
+    --radius-card: 20px;
+    --radius-btn: 50px;
+    --radius-feature-icon: 50%;
+    --radius-author: 50%;
+
+    /* Other */
+    --transition-main: all 0.3s ease;
+    --transition-btn: left 0.5s; /* For shine effect */
+    --transition-card-shine: left 0.5s; /* For shine effect */
+    --z-navbar: 1000;
+    --z-hero: 2;
+    --z-hero-bg: 1;
+}
+
+/* Base styles */
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-main); /* Default text color for light backgrounds */
+    background: var(--color-bg-gradient); /* New gradient background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scroll due to transitions */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    color: var(--color-text-main);
+}
+
+section {
+    padding: var(--spacing-section) var(--spacing-container);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; /* Ensure sections take full width within container */
+}
+@media (max-width: 768px) {
+    section {
+        padding: var(--spacing-section) var(--spacing-container-sm);
+    }
+}
+
+/* Custom Utility Classes based on variables */
+.text-main { color: var(--color-text-main); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-accent { color: var(--color-text-accent); }
+.text-highlight { color: var(--color-highlight); }
+
+.btn-primary {
+    background: var(--color-btn-primary);
+    color: var(--color-btn-primary-text);
+    padding: var(--spacing-btn);
+    border-radius: var(--radius-btn);
+    font-weight: 600;
+    transition: var(--transition-main);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-btn);
+}
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* White shine */
+    transform: skewX(-20deg);
+    transition: var(--transition-btn);
+    z-index: -1;
+}
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    background-color: var(--color-btn-secondary-bg);
+    color: var(--color-btn-secondary-text); /* Adjusted for light background */
+    border: 2px solid var(--color-btn-secondary-border); /* Adjusted for light background */
+    padding: var(--spacing-btn);
+    border-radius: var(--radius-btn);
+    font-weight: 600;
+    transition: var(--transition-main);
+    font-size: var(--font-size-btn);
+}
+.btn-secondary:hover {
+    background-color: var(--color-btn-secondary-hover-bg);
+    color: var(--color-btn-secondary-hover-text); /* Adjusted for light background */
+    border-color: var(--color-btn-secondary-hover-bg);
+}
+
+@media (max-width: 640px) {
+    .btn-primary, .btn-secondary {
+        padding: var(--spacing-btn-sm);
+        font-size: var(--font-size-btn-sm);
+    }
+}
+
+/* Card styles */
+.card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-card);
+    box-shadow: 0 8px 16px var(--color-card-shadow);
+    padding: var(--spacing-card);
+    transition: var(--transition-main);
+    position: relative;
+    overflow: hidden;
+}
+.card:hover {
+    border-color: var(--color-card-border-hover); /* Optimized color */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+}
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--color-feature-card-before); /* Optimized color */
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: var(--transition-card-shine);
+    z-index: 0;
+}
+.card:hover::before {
+    opacity: 1;
+    left: -10%;
+    top: -10%;
+}
+.card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Feature card specific styles (icons) */
+.feature-icon-bg {
+    background: var(--color-feature-icon-bg);
+    border-radius: var(--radius-feature-icon);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    color: var(--color-text-main); /* Should be white for contrast on gradient */
+    color: white; /* Override to white for icons on dark gradient */
+}
+
+/* Testimonial specific styles */
+.testimonial-quote-bg {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 5rem;
+    color: var(--color-testimonial-quote); /* Optimized color */
+    line-height: 1;
+    z-index: 0;
+    opacity: 0.8; /* Slight opacity */
+}
+.author-img {
+    border: 3px solid var(--color-author-border); /* Optimized color */
+    border-radius: var(--radius-author);
+    object-fit: cover;
+}
+
+/* Hero Section Specific Styles */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: var(--color-bg-gradient); /* Ensure gradient is visible if image is not covering fully */
+    z-index: var(--z-hero);
+    padding: var(--spacing-container);
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://placehold.co/1920x1080/4e9f3d/ffffff/png?text=Event+Decorations') no-repeat center center/cover; /* Updated placeholder image color */
+    opacity: 0.3; /* Adjust based on image and overlay */
+    z-index: var(--z-hero-bg);
+}
+.hero-section::after { /* Overlay gradient for text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-overlay-gradient);
+    z-index: var(--z-hero-bg);
+    opacity: 0.7; /* Adjust for desired darkness/coloration */
+}
+.hero-content {
+    position: relative;
+    z-index: var(--z-hero);
+    max-width: 900px;
+    color: white; /* Ensure hero text is white on dark overlay */
+}
+.hero-title {
+    font-size: var(--font-size-main-title);
+    line-height: 1.1;
+    color: white; /* Explicitly set for hero */
+}
+@media (max-width: 1024px) {
+    .hero-title { font-size: var(--font-size-main-title-md); }
+}
+@media (max-width: 768px) {
+    .hero-title { font-size: var(--font-size-main-title-sm); }
+}
+
+/* Navbar specific styles */
+.navbar {
+    background-color: var(--color-navbar-bg);
+    border-bottom: 1px solid var(--color-navbar-border);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: var(--z-navbar);
+}
+.nav-link {
+    color: white; /* Explicitly set to white for contrast on dark green navbar */
+    transition: var(--transition-main);
+    position: relative;
+    padding: 0.5rem 0;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-highlight); /* Highlight color for nav link hover */
+    transition: width 0.3s ease-in-out;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+.navbar .font-title {
+    color: white; /* Ensure logo text is white on dark navbar */
+}
+
+/* Mobile Menu */
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: var(--color-navbar-bg); /* Use navbar background for consistency */
+    backdrop-filter: blur(15px);
+    padding-top: 4rem; /* Space for close button */
+    z-index: var(--z-navbar) - 1; /* Below the header, above content */
+}
+#mobile-menu.open {
+    transform: translateX(0);
+}
+#mobile-menu .nav-link {
+    color: white; /* Ensure mobile nav links are white */
+}
+#mobile-menu-button, #close-mobile-menu {
+    color: white; /* Ensure mobile menu icons are white */
+}
+
+
+/* Footer */
+.footer-section {
+    background-color: var(--color-footer-bg);
+    border-top: 1px solid var(--color-footer-border);
+    padding: var(--spacing-footer);
+    font-family: var(--font-main);
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+.footer-link {
+    color: var(--color-footer-link);
+    transition: var(--transition-main);
+}
+.footer-link:hover {
+    color: var(--color-footer-link-hover);
+}
+.footer-section .font-title {
+    color: white; /* Ensure footer logo is white */
+}
+
+/* Section Headers */
+.section-header {
+    font-size: var(--font-size-section-header);
+    margin-bottom: 2rem;
+    color: var(--color-text-main); /* Dark gray on light background */
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .section-header {
+        font-size: var(--font-size-section-header-sm);
+    }
+}
